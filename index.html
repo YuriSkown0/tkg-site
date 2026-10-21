@@ -3,191 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="TKG, serveur Garry's Mod Tokyo Ghoul RP : règlement, lore, boutique et accès au serveur.">
+<title>TKG — Tokyo Ghoul RP</title>
+<meta name="description" content="TKG, serveur Garry's Mod Tokyo Ghoul RP : règlement, lore, équipe et accès au serveur.">
 <meta property="og:title" content="TKG — Tokyo Ghoul RP">
-<meta property="og:description" content="Goule ou Inspecteur de la CCG ? Rejoins le serveur Garry's Mod Tokyo Ghoul RP.">
+<meta property="og:description" content="TKG, serveur Garry's Mod Tokyo Ghoul RP : règlement, lore, équipe et accès au serveur.">
 <meta name="theme-color" content="#0c090a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230c090a'/%3E%3Ccircle cx='50' cy='50' r='30' fill='%23d21a2b'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23050304'/%3E%3C/svg%3E">
-<title>TKG — Tokyo Ghoul RP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
-<style>
-/* Layout : page longue, une colonne de 1100px, nav collante ; chaque section = un « dossier » numéroté façon fiche CCG */
-:root{
-  --ink:#0c090a; --ink-2:#151012; --ink-3:#1f1719;
-  --bone:#ece4de; --ash:#9b8f8c; --line:#3a2c2f;
-  --blood:#d21a2b; --blood-dim:#7d0f1a; --rust:#e0554a;
-  --ccg:#c9b98f;
-  --f-display:"Shippori Mincho B1","Hiragino Mincho ProN","Times New Roman",serif;
-  --f-body:"Zen Kaku Gothic New","Segoe UI",system-ui,sans-serif;
-  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
-  color-scheme:dark;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{background:var(--ink);color:var(--bone);font-family:var(--f-body);font-size:16px;line-height:1.65;margin:0}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--ink)}
-a{color:var(--rust)}
-:focus-visible{outline:2px solid var(--blood);outline-offset:3px}
-.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-
-/* NAV */
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--ink) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;gap:20px;padding-block:12px}
-.brand{font-family:var(--f-display);font-weight:800;font-size:20px;letter-spacing:.04em;color:var(--bone);text-decoration:none;white-space:nowrap}
-.brand b{color:var(--blood)}
-.links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;min-width:0}
-.links::-webkit-scrollbar{display:none}
-.links a{color:var(--ash);text-decoration:none;font-size:14px;padding:6px 10px;border-radius:4px;white-space:nowrap}
-.links a:hover{color:var(--bone);background:var(--ink-3)}
-.links a.shop{color:var(--bone);border:1px solid var(--blood-dim)}
-
-/* HERO */
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-.hero .wrap{position:relative;padding-block:clamp(56px,10vw,120px) clamp(48px,8vw,96px);display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
-.kanji{position:absolute;right:-2vw;top:50%;transform:translateY(-50%);font-family:var(--f-display);font-weight:800;font-size:clamp(180px,32vw,420px);line-height:.85;color:var(--blood-dim);opacity:.28;writing-mode:vertical-rl;pointer-events:none;user-select:none}
-.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--blood)}
-h1{font-family:var(--f-display);font-weight:800;font-size:clamp(40px,7vw,84px);line-height:1;margin:14px 0 18px;text-wrap:balance}
-h1 em{font-style:normal;color:var(--blood)}
-.hero p.lead{color:var(--ash);font-size:18px;max-width:52ch;margin:0 0 28px}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px var(--f-body);padding:12px 20px;border-radius:3px;text-decoration:none;cursor:pointer;border:1px solid var(--line);background:var(--ink-2);color:var(--bone)}
-.btn.red{background:var(--blood);border-color:var(--blood);color:#fff}
-.btn:hover{filter:brightness(1.15)}
-
-/* Kakugan — œil signature */
-.eye{justify-self:center;width:min(280px,70vw);aspect-ratio:2/1;max-width:100%}
-.eye svg{width:100%;height:100%}
-.pupil{transform-origin:200px 100px;animation:pulse 4s ease-in-out infinite}
-@keyframes pulse{50%{transform:scale(1.08)}}
-
-/* SECTIONS */
-section{padding-block:clamp(56px,8vw,96px);border-bottom:1px solid var(--line)}
-.head{display:flex;align-items:baseline;gap:14px;margin-bottom:28px;flex-wrap:wrap}
-.head .no{font-family:var(--f-mono);font-size:13px;color:var(--blood)}
-h2{font-family:var(--f-display);font-weight:800;font-size:clamp(30px,4.5vw,46px);line-height:1.1;margin:0;text-wrap:balance}
-.head .jp{font-family:var(--f-display);color:var(--ash);font-size:18px}
-h3{font-family:var(--f-display);font-size:22px;margin:0 0 8px;text-wrap:balance}
-p{margin:0 0 14px}
-.muted{color:var(--ash)}
-.ex{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ash);border:1px dashed var(--line);padding:2px 6px;border-radius:3px}
-
-/* ACTUS */
-.news{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.news article{border-top:2px solid var(--blood);background:var(--ink-2);padding:20px;min-width:0}
-.news time{font-family:var(--f-mono);font-size:12px;color:var(--ash)}
-.news h3{margin-top:6px;font-size:19px}
-.news p{color:var(--ash);font-size:15px;margin:0}
-
-/* RÈGLEMENT */
-.rules{display:grid;grid-template-columns:240px 1fr;gap:36px}
-.rules aside p{color:var(--ash);font-size:15px}
-.acc{border-top:1px solid var(--line)}
-details{border-bottom:1px solid var(--line)}
-summary{list-style:none;cursor:pointer;display:flex;gap:16px;align-items:baseline;padding:16px 0;font-weight:700;font-size:17px}
-summary::-webkit-details-marker{display:none}
-summary .art{font-family:var(--f-mono);font-size:12px;color:var(--blood);min-width:52px}
-summary::after{content:"+";margin-left:auto;color:var(--ash);font-family:var(--f-mono)}
-details[open] summary::after{content:"−"}
-details .body{padding:0 0 18px 68px;color:#cfc6c1;max-width:68ch}
-details .body ul{margin:0;padding-left:18px;display:grid;gap:6px}
-details .body strong{color:var(--bone)}
-
-/* LORE */
-.lore-intro{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-bottom:48px}
-.lore-intro p{max-width:60ch}
-.rc{margin:8px 0 48px}
-.rc-label{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:12px;color:var(--ash);margin-bottom:8px}
-.scale-wrap{overflow-x:auto}
-.scale{display:grid;grid-template-columns:repeat(9,minmax(74px,1fr));min-width:680px}
-.scale div{padding:12px 10px;border-left:1px solid var(--ink);position:relative}
-.scale b{display:block;font-family:var(--f-display);font-size:22px}
-.scale span{font-family:var(--f-mono);font-size:11px;font-variant-numeric:tabular-nums}
-.scale small{display:block;font-size:11px;line-height:1.3;margin-top:6px;opacity:.85}
-.camps{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:48px}
-.camp{padding:26px;background:var(--ink-2);border:1px solid var(--line);min-width:0}
-.camp.ghoul{border-top:3px solid var(--blood)}
-.camp.ccg{border-top:3px solid var(--ccg)}
-.camp.ccg h3{color:var(--ccg)}
-.camp ul{padding-left:18px;margin:0;color:#cfc6c1;display:grid;gap:6px}
-.kagune{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.kagune div{background:var(--ink);padding:22px;min-width:0}
-.kagune .jp{font-family:var(--f-display);color:var(--blood);font-size:28px;line-height:1}
-.kagune h3{margin:10px 0 2px}
-.kagune .where{font-family:var(--f-mono);font-size:11px;color:var(--ash);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
-.kagune p{font-size:15px;color:#cfc6c1;margin:0}
-.note{margin-top:18px;font-size:15px;color:var(--ash);max-width:70ch}
-
-/* BOUTIQUE */
-.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.item{display:flex;flex-direction:column;gap:10px;padding:24px;background:var(--ink-2);border:1px solid var(--line);min-width:0}
-.item.feat{border-color:var(--blood-dim);background:linear-gradient(180deg,#22090d,var(--ink-2) 60%)}
-.item .tag{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blood)}
-.item .price{font-family:var(--f-display);font-size:32px;font-weight:800;font-variant-numeric:tabular-nums}
-.item .price small{font-family:var(--f-body);font-size:14px;color:var(--ash);font-weight:400}
-.item ul{padding-left:18px;margin:0;color:#cfc6c1;font-size:15px;display:grid;gap:4px;flex:1}
-.item .btn{justify-content:center;margin-top:8px}
-.shop-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:22px;color:var(--ash);font-size:14px}
-
-/* STAFF */
-.staff{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.member{padding:20px;border:1px solid var(--line);min-width:0}
-.avatar{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:22px;background:var(--ink-3);color:var(--blood);margin-bottom:12px}
-.member .role{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ash)}
-.member h3{font-size:19px;margin:2px 0 6px}
-.member p{font-size:14px;color:var(--ash);margin:0}
-.member.open{border-style:dashed}
-.member.open .avatar{color:var(--ash)}
-
-/* FAQ */
-.faq{max-width:780px}
-.faq summary{font-weight:500}
-.faq details .body{padding-left:0}
-
-/* REJOINDRE */
-.join{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.join .card{padding:28px;background:var(--ink-2);border:1px solid var(--line);min-width:0}
-.ip{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0}
-.ip code{font-family:var(--f-mono);font-size:17px;background:var(--ink);border:1px solid var(--line);padding:10px 14px;border-radius:3px;user-select:all;overflow-wrap:anywhere}
-.steps{padding-left:20px;margin:0;color:#cfc6c1;display:grid;gap:6px}
-.copied{font-family:var(--f-mono);font-size:12px;color:var(--rust)}
-
-footer{padding-block:36px;color:var(--ash);font-size:13px}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-
-@media (max-width:900px){
-  .hero .wrap,.rules,.lore-intro,.camps,.join{grid-template-columns:1fr}
-  .eye{display:none}
-  .news,.shop-grid{grid-template-columns:1fr}
-  .kagune,.staff{grid-template-columns:1fr 1fr}
-}
-@media (max-width:520px){
-  .kagune,.staff{grid-template-columns:1fr}
-  details .body{padding-left:0}
-  .brand{font-size:18px}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-
 <nav>
   <div class="wrap">
-    <a class="brand" href="#top">TK<b>G</b></a>
+    <a class="brand" href="index.html">TK<b>G</b></a>
     <div class="links">
-      <a href="#actus">Actualités</a>
-      <a href="#reglement">Règlement</a>
-      <a href="#lore">Lore</a>
-      <a href="#boutique" class="shop">Boutique</a>
-      <a href="#staff">Staff</a>
-      <a href="#faq">FAQ</a>
-      <a href="#rejoindre">Rejoindre</a>
+      <a href="index.html" aria-current="page">Accueil</a>
+      <a href="reglement.html">Règlement</a>
+      <a href="lore.html">Lore</a>
+      <a href="equipe.html">Équipe</a>
+      <a href="rejoindre.html">Rejoindre</a>
+      <a class="shop" href="https://pandora-tokyo-ghoul.tebex.store" target="_blank" rel="noopener">Boutique <span>↗</span></a>
     </div>
   </div>
 </nav>
-
-<header class="hero" id="top">
+<main>
+<header class="hero">
   <div class="kanji" aria-hidden="true">喰種</div>
   <div class="wrap">
     <div>
@@ -195,8 +37,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <h1>Tokyo a faim.<br><em>Choisis ton camp.</em></h1>
       <p class="lead">Goule qui cache son kakugan sous un masque, ou Inspecteur de la CCG armé d'une Quinque. Un RP sérieux dans l'univers de Tokyo Ghoul, avec un vrai système de RC, de kagune et de rangs.</p>
       <div class="cta">
-        <a class="btn red" href="#rejoindre">Rejoindre le serveur</a>
-        <a class="btn" href="#lore">Découvrir le lore</a>
+        <a class="btn red" href="rejoindre.html">Rejoindre le serveur</a>
+        <a class="btn" href="lore.html">Découvrir le lore</a>
       </div>
     </div>
     <div class="eye" aria-hidden="true">
@@ -213,265 +55,45 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </div>
 </header>
 
-<main>
-  <section id="actus">
-    <div class="wrap">
-      <div class="head"><span class="no">01</span><h2>Actualités</h2><span class="jp">新着</span></div>
-      <div class="news">
-        <article>
-          <time datetime="2026-10-16">16 oct. 2026</time>
-          <h3>Guide en jeu et règlement</h3>
-          <p>Un guide complet est maintenant accessible avec <code>!guide</code>. Les pages s'adaptent à ta race : Goule, CCG ou humain.</p>
-        </article>
-        <article>
-          <time datetime="2026-10-10">Oct. 2026</time>
-          <h3>Système de quêtes</h3>
-          <p>Des quêtes guident les nouveaux joueurs et ouvrent des intrigues propres à chaque camp.</p>
-        </article>
-        <article>
-          <time datetime="2026-10-01">Oct. 2026</time>
-          <h3>Mur d'enquête CCG</h3>
-          <p>Les Inspecteurs peuvent désormais relier indices, suspects et lieux sur un tableau d'enquête partagé.</p>
-        </article>
-      </div>
+<section>
+  <div class="wrap">
+    <h2>Actualités</h2>
+    <div class="news">
+      <article>
+        <time datetime="2026-10-21">21 oct. 2026</time>
+        <h3>Boutique et Éclats</h3>
+        <p>La boutique arrive en jeu avec <code>F4</code>. Gagne des Éclats en jouant et en terminant des quêtes, puis échange-les contre des rerolls.</p>
+      </article>
+      <article>
+        <time datetime="2026-10-16">16 oct. 2026</time>
+        <h3>Guide en jeu et règlement</h3>
+        <p>Un guide complet est accessible avec <code>!guide</code>. Les pages s'adaptent à ta race : Goule, CCG ou humain.</p>
+      </article>
+      <article>
+        <time datetime="2026-10-10">Oct. 2026</time>
+        <h3>Système de quêtes</h3>
+        <p>Des quêtes guident les nouveaux joueurs et ouvrent des intrigues propres à chaque camp.</p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="reglement">
-    <div class="wrap">
-      <div class="head"><span class="no">02</span><h2>Règlement</h2><span class="jp">規則</span></div>
-      <div class="rules">
-        <aside>
-          <p>Le règlement doit être accepté à la première connexion. Il est aussi lisible en jeu avec <code>!guide</code>.</p>
-          <p>Le staff peut le mettre à jour. Tu devras alors l'accepter à nouveau.</p>
-        </aside>
-        <div class="acc">
-          <details open>
-            <summary><span class="art">Art. 1</span>Respect et comportement</summary>
-            <div class="body"><ul>
-              <li>Aucune insulte, discrimination ou harcèlement, en jeu comme sur le Discord.</li>
-              <li>Ce qui se passe en RP reste en RP. Pas de rancune hors personnage.</li>
-              <li>Les micros et chats sont réservés au RP ; le HRP passe par le chat dédié.</li>
-            </ul></div>
-          </details>
-          <details>
-            <summary><span class="art">Art. 2</span>Roleplay</summary>
-            <div class="body"><ul>
-              <li><strong>MetaGaming</strong> interdit : on n'utilise pas en jeu une info obtenue hors RP.</li>
-              <li><strong>PowerGaming</strong> interdit : pas d'actions irréalistes ou imposées sans laisser de choix à l'autre.</li>
-              <li><strong>FearRP</strong> obligatoire : ton personnage tient à sa vie. Un humain ne provoque pas une goule rang S.</li>
-              <li>Ton identité de goule est un secret. Ne révèle pas ton kakugan en public sans raison RP.</li>
-            </ul></div>
-          </details>
-          <details>
-            <summary><span class="art">Art. 3</span>Combat</summary>
-            <div class="body"><ul>
-              <li><strong>FreeKill</strong> interdit : toute agression doit avoir une raison RP claire.</li>
-              <li>Un joueur à terre peut être achevé, épargné ou capturé. Laisse-lui le temps de jouer la scène.</li>
-              <li>Après une mort, ton personnage oublie les circonstances du combat.</li>
-              <li>Pas de combat dans les zones protégées (hôpital, commissariat, café de quartier).</li>
-            </ul></div>
-          </details>
-          <details>
-            <summary><span class="art">Art. 4</span>Goules et CCG</summary>
-            <div class="body"><ul>
-              <li>Se nourrir passe par une scène RP. Pas de chasse en masse sans raison.</li>
-              <li>Les rangs S, SS et SSS demandent une validation RP et staff, pas seulement un seuil de RC.</li>
-              <li>Un Inspecteur ne porte que des Quinques autorisées pour son rang.</li>
-            </ul></div>
-          </details>
-          <details>
-            <summary><span class="art">Art. 5</span>Staff et sanctions</summary>
-            <div class="body"><ul>
-              <li>Les décisions du staff s'appliquent en jeu. Une contestation se fait ensuite, par ticket Discord.</li>
-              <li>Exploiter un bug est sanctionné. Signale-le au staff.</li>
-              <li>Sanctions : avertissement, kick, ban temporaire, ban définitif selon la gravité.</li>
-            </ul></div>
-          </details>
-        </div>
-      </div>
+<section>
+  <div class="wrap">
+    <h2>Avant de te connecter</h2>
+    <div class="paths">
+      <a href="reglement.html"><span class="jp">規則</span><h3>Le règlement</h3><p>Les règles à connaître et à accepter avant ta première partie.</p><span class="go">Lire le règlement →</span></a>
+      <a href="lore.html"><span class="jp">物語</span><h3>Le lore</h3><p>Goules, CCG, RC et kagune : comment fonctionne l'univers du serveur.</p><span class="go">Découvrir le lore →</span></a>
+      <a href="rejoindre.html"><span class="jp">参加</span><h3>Rejoindre</h3><p>L'IP du serveur, la collection Workshop et le Discord.</p><span class="go">Se connecter →</span></a>
     </div>
-  </section>
-
-  <section id="lore">
-    <div class="wrap">
-      <div class="head"><span class="no">03</span><h2>Lore</h2><span class="jp">物語</span></div>
-      <div class="lore-intro">
-        <p>Tokyo vit sur une ligne de faille. Parmi ses habitants se cachent les <strong>goules</strong> : identiques aux humains, elles ne peuvent se nourrir que de chair humaine. Leurs cellules Rc, dix fois plus nombreuses que chez un humain, coulent comme du sang et durcissent comme de l'émail. Stockées dans le kakuhou, elles jaillissent hors du corps pour former le kagune.</p>
-        <p>Face à elles, la <strong>CCG</strong>, Commission de Contre-Goules, traque et élimine. Ses Inspecteurs combattent avec des Quinques, des armes forgées à partir du kakuhou des goules abattues. Chaque goule tuée devient une arme. Chaque Inspecteur qui monte en grade porte une goule plus puissante.</p>
-      </div>
-
-      <h3>L'échelle RC</h3>
-      <p class="muted">Un seul tableau pour les deux camps. Le RC d'une goule fixe son rang ; le RC d'une Quinque fixe le grade de l'Inspecteur qui peut la porter.</p>
-      <div class="rc">
-        <div class="rc-label"><span>Humain : 200 – 500 RC</span><span>Goule moyenne : 1 000 – 8 000 RC</span></div>
-        <div class="scale-wrap">
-          <div class="scale">
-            <div style="background:#2a1418"><b>C</b><span>0 – 2 000</span><small>Insp. 3ᵉ classe</small></div>
-            <div style="background:#3a161b"><b>C+</b><span>2 000 – 3 500</span><small>Insp. 2ᵉ classe</small></div>
-            <div style="background:#4c171d"><b>B</b><span>3 500 – 5 000</span><small>Insp. 1ʳᵉ classe</small></div>
-            <div style="background:#5f171f"><b>B+</b><span>5 000 – 7 000</span><small>Insp. confirmé</small></div>
-            <div style="background:#731621"><b>A</b><span>7 000 – 10 000</span><small>Chef adjoint</small></div>
-            <div style="background:#891522"><b>A+</b><span>10 000 – 12 500</span><small>Insp. en Chef</small></div>
-            <div style="background:#a31424"><b>S</b><span>12 500 – 15 000</span><small>Spécial adjoint</small></div>
-            <div style="background:#bc1426"><b>SS</b><span>15 000 – 17 500</span><small>Insp. Spécial</small></div>
-            <div style="background:#d21a2b;color:#fff"><b>SSS</b><span>17 500 +</span><small>Réponse d'exception</small></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="camps">
-        <div class="camp ghoul">
-          <h3>Les Goules</h3>
-          <ul>
-            <li>Gagnent du RC en se nourrissant et en survivant à des combats difficiles.</li>
-            <li>Le jeûne prolongé affaiblit le RC disponible : il faut chasser.</li>
-            <li>Dévorer d'autres goules mène au <strong>Kakuja</strong>, une armure de kagune au prix de sa santé mentale.</li>
-            <li>Le <strong>kagune chimère</strong>, mélange de deux types, n'existe que par reroll ou candidature.</li>
-          </ul>
-        </div>
-        <div class="camp ccg">
-          <h3>La CCG</h3>
-          <ul>
-            <li>Les Inspecteurs montent en grade en recevant une Quinque plus puissante.</li>
-            <li>À partir d'Inspecteur en Chef Adjoint, une validation RP est obligatoire.</li>
-            <li>Une Quinque hérite du type et du RC de la goule dont elle provient.</li>
-            <li>Une goule SSS dépasse tout Inspecteur seul : elle déclenche une opération collective.</li>
-          </ul>
-        </div>
-      </div>
-
-      <h3>Les quatre kagune</h3>
-      <div class="kagune">
-        <div><div class="jp">羽赫</div><h3>Ukaku</h3><div class="where">Épaules</div><p>Le plus rapide, avec les meilleurs dégâts à distance. Son endurance s'épuise en premier.</p></div>
-        <div><div class="jp">甲赫</div><h3>Koukaku</h3><div class="where">Omoplates</div><p>Armure et armes lourdes. La meilleure défense, mais le plus lent à manier.</p></div>
-        <div><div class="jp">鱗赫</div><h3>Rinkaku</h3><div class="where">Bas du dos</div><p>Tentacules, régénération et dégâts bruts les plus forts. Fragile : il peut être sectionné.</p></div>
-        <div><div class="jp">尾赫</div><h3>Bikaku</h3><div class="where">Coccyx</div><p>Une queue polyvalente, équilibrée. Le plus simple à prendre en main.</p></div>
-      </div>
-      <p class="note">Aucun type n'en contre un autre : c'est une question de style de jeu. Le kagune se forme, tient sa forme en consommant du RC, puis se dissout. Le pousser trop loin a un coût.</p>
-    </div>
-  </section>
-
-  <section id="boutique">
-    <div class="wrap">
-      <div class="head"><span class="no">04</span><h2>Boutique</h2><span class="jp">店</span><span class="ex">Prix d'exemple</span></div>
-      <p class="muted" style="max-width:62ch">Les achats soutiennent l'hébergement et le développement du serveur. Ils sont cosmétiques ou de confort : ils ne donnent ni RC, ni rang, ni avantage en combat.</p>
-      <div class="shop-grid">
-        <div class="item">
-          <span class="tag">Grade</span>
-          <h3>VIP</h3>
-          <div class="price">5 € <small>/ mois</small></div>
-          <ul>
-            <li>Tag VIP dans le chat et le tableau des joueurs</li>
-            <li>Slot réservé quand le serveur est plein</li>
-            <li>Un emplacement de personnage en plus</li>
-          </ul>
-          <a class="btn red" href="#" data-shop>Acheter</a>
-        </div>
-        <div class="item feat">
-          <span class="tag">Le plus choisi</span>
-          <h3>Masque sur mesure</h3>
-          <div class="price">8 €</div>
-          <ul>
-            <li>Un masque de goule unique, dessiné avec toi</li>
-            <li>Couleurs et motifs au choix</li>
-            <li>Ajouté à ton inventaire après validation</li>
-          </ul>
-          <a class="btn red" href="#" data-shop>Acheter</a>
-        </div>
-        <div class="item">
-          <span class="tag">Cosmétique</span>
-          <h3>Teinte de kagune</h3>
-          <div class="price">4 €</div>
-          <ul>
-            <li>Change la couleur de ton kagune</li>
-            <li>Aucune modification de stats</li>
-            <li>Garde ton type d'origine</li>
-          </ul>
-          <a class="btn red" href="#" data-shop>Acheter</a>
-        </div>
-      </div>
-      <div class="shop-foot">
-        <span>Paiement sécurisé sur la boutique externe. Livraison en jeu à la prochaine connexion.</span>
-        <span>Un souci avec un achat ? Ouvre un ticket sur le Discord.</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="staff">
-    <div class="wrap">
-      <div class="head"><span class="no">05</span><h2>Équipe</h2><span class="jp">運営</span></div>
-      <div class="staff">
-        <div class="member"><div class="avatar">Y</div><div class="role">Fondateur</div><h3>Yuri</h3><p>Développement du gamemode et direction du lore.</p></div>
-        <div class="member"><div class="avatar">A</div><div class="role">Administrateur</div><h3>À définir</h3><p>Gestion du staff et des sanctions.</p></div>
-        <div class="member"><div class="avatar">M</div><div class="role">Modérateur</div><h3>À définir</h3><p>Tickets, plaintes et suivi RP.</p></div>
-        <div class="member open"><div class="avatar">?</div><div class="role">Recrutement</div><h3>Ta place ici</h3><p>Candidatures ouvertes sur le Discord.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap">
-      <div class="head"><span class="no">06</span><h2>FAQ</h2><span class="jp">質問</span></div>
-      <div class="faq acc">
-        <details><summary>Faut-il connaître Tokyo Ghoul pour jouer ?</summary><div class="body"><p>Non. Le guide en jeu (<code>!guide</code>) explique tout ce qu'il faut savoir sur les goules, la CCG et le combat. Connaître l'univers aide, mais ce n'est pas obligatoire.</p></div></details>
-        <details><summary>Quels contenus dois-je télécharger ?</summary><div class="body"><p>Abonne-toi à la collection Workshop du serveur avant de te connecter. Sans elle, tu verras des textures manquantes.</p></div></details>
-        <details><summary>Comment devenir Goule ou Inspecteur ?</summary><div class="body"><p>Tu choisis ton camp à la création du personnage. Le type de kagune se choisit aussi à ce moment-là, ou plus tard par un réveil en RP.</p></div></details>
-        <details><summary>Comment obtenir un Kakuja ou un kagune chimère ?</summary><div class="body"><p>Le kagune chimère passe uniquement par reroll ou candidature. Le Kakuja s'obtient par reroll, ou en jouant le cannibalisme de ton personnage avec un suivi du staff.</p></div></details>
-        <details><summary>Comment monter en rang ?</summary><div class="body"><p>Les goules montent en gagnant du RC. Les Inspecteurs montent en recevant une Quinque plus puissante. Les rangs du haut demandent aussi une validation RP.</p></div></details>
-        <details><summary>J'ai été sanctionné, je peux contester ?</summary><div class="body"><p>Oui, par ticket sur le Discord, en expliquant la situation. Ne conteste pas en jeu pendant la scène.</p></div></details>
-      </div>
-    </div>
-  </section>
-
-  <section id="rejoindre">
-    <div class="wrap">
-      <div class="head"><span class="no">07</span><h2>Rejoindre</h2><span class="jp">参加</span></div>
-      <div class="join">
-        <div class="card">
-          <h3>Le serveur</h3>
-          <div class="ip">
-            <code id="ip">connect 000.000.000.000:27015</code>
-            <button class="btn" id="copy" type="button">Copier</button>
-            <span class="copied" id="copied" hidden>Copié</span>
-          </div>
-          <ol class="steps">
-            <li>Abonne-toi à la collection Workshop.</li>
-            <li>Ouvre la console de Garry's Mod (touche <code>²</code>).</li>
-            <li>Colle la commande ci-dessus et valide.</li>
-            <li>Lis et accepte le règlement à l'arrivée.</li>
-          </ol>
-        </div>
-        <div class="card">
-          <h3>Le Discord</h3>
-          <p class="muted">Annonces, candidatures staff, tickets, boutique et suivi de ton RP. C'est là que tout se passe hors jeu.</p>
-          <div class="cta" style="margin-top:18px">
-            <a class="btn red" href="#" id="discord">Rejoindre le Discord</a>
-            <a class="btn" href="#" id="workshop">Collection Workshop</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 </main>
-
 <footer>
   <div class="wrap">
     <span>TKG · Serveur Garry's Mod Tokyo Ghoul RP</span>
     <span>Projet de fans, sans lien avec Sui Ishida, Shueisha ou Facepunch.</span>
   </div>
 </footer>
-
-<script>
-document.getElementById('copy').addEventListener('click', function(){
-  var t = document.getElementById('ip').textContent, ok = document.getElementById('copied');
-  function done(){ ok.hidden = false; setTimeout(function(){ ok.hidden = true; }, 1800); }
-  try {
-    navigator.clipboard.writeText(t).then(done, function(){ select(); });
-  } catch(e){ select(); }
-  function select(){ var r = document.createRange(); r.selectNodeContents(document.getElementById('ip')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
-});
-</script>
-
 </body>
 </html>
