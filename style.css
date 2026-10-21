@@ -121,7 +121,15 @@ details .body strong{color:var(--bone)}
 .note{margin-top:18px;font-size:15px;color:var(--ash);max-width:70ch}
 
 /* ÉQUIPE */
-.staff{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.founders{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.member.founder{display:flex;gap:20px;align-items:center;padding:24px;background:var(--ink-2);border-top:2px solid var(--blood)}
+.member.founder > div{min-width:0}
+.member.founder .avatar{width:96px;height:96px;margin:0;flex:none}
+.member.founder h3{font-size:24px}
+.member.founder p{font-size:15px}
+img.avatar{object-fit:cover;border:2px solid var(--blood-dim);background:var(--ink-3)}
+.staff-title{margin-top:48px}
+.staff{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .member{padding:20px;border:1px solid var(--line);min-width:0}
 .avatar{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:22px;background:var(--ink-3);color:var(--blood);margin-bottom:12px}
 .member .role{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ash)}
@@ -144,7 +152,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 @media (max-width:900px){
   .hero .wrap,.rules,.lore-intro,.camps,.join{grid-template-columns:1fr}
   .eye{display:none}
-  .news,.paths{grid-template-columns:1fr}
+  .news,.paths,.founders{grid-template-columns:1fr}
   .kagune,.staff{grid-template-columns:1fr 1fr}
 }
 @media (max-width:520px){
