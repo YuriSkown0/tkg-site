@@ -29,8 +29,8 @@ nav .wrap{display:flex;align-items:center;gap:20px;padding-block:12px}
 .brand .mark .cut{fill:none;stroke:var(--ink);stroke-width:.9;opacity:.55}
 .brand:hover .mark{transform:rotate(60deg)}
 .brand .name{font-family:var(--f-display);font-weight:800;font-size:19px;letter-spacing:.22em;margin-right:-.22em;background:linear-gradient(180deg,var(--bone) 55%,#b9aaa4);-webkit-background-clip:text;background-clip:text;color:transparent}
-.brand .sep{width:1px;height:18px;background:var(--blood);transform:skewX(-18deg)}
-.brand .tag{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;margin-right:-.2em;color:var(--blood);border:1px solid var(--blood-dim);padding:2px 6px 1px;border-radius:2px}
+.brand .sep{width:14px;height:2px;background:var(--blood);box-shadow:0 0 6px rgba(210,26,43,.6)}
+.brand .tag{font-family:var(--f-display);font-weight:800;font-size:19px;letter-spacing:.22em;margin-right:-.22em;color:var(--blood)}
 .links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1}
 .links::-webkit-scrollbar{display:none}
 .links a{color:var(--ash);text-decoration:none;font-size:14px;padding:6px 10px;border-radius:4px;white-space:nowrap;border-bottom:2px solid transparent}
@@ -167,7 +167,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   .brand{gap:7px}
   .brand .name{font-size:15px;letter-spacing:.14em;margin-right:-.14em}
   .brand .mark{width:18px;height:18px}
-  .brand .tag{font-size:10px;padding:1px 4px}
+  .brand .tag{font-size:15px;letter-spacing:.14em;margin-right:-.14em}
+  .brand .sep{width:9px}
 }
 
 /* COMING SOON */
