@@ -226,3 +226,5 @@ h1 .sub{display:block;font-size:.5em;line-height:1.15;margin-top:.35em}
   .chrono .when{text-align:left;padding-right:0;flex-direction:row;align-items:baseline;gap:12px;flex-wrap:wrap}
   .chrono .what{padding-left:0}
 }
+.member .traits{margin:0;padding-left:16px;font-size:14px;color:var(--ash);display:grid;gap:4px}
+.member .traits li::marker{color:var(--blood)}
