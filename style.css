@@ -167,3 +167,4 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .soon-jp{font-family:var(--f-display);font-weight:800;font-size:clamp(120px,24vw,260px);line-height:1;color:var(--blood-dim);opacity:.35;user-select:none;margin-bottom:-.35em}
 .soon h1{margin:6px 0 0;position:relative}
 .soon h1::after{content:"";display:block;width:56px;height:2px;background:var(--blood);margin:22px auto 0}
+h1 .sub{display:block;font-size:.5em;line-height:1.15;margin-top:.35em}
