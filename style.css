@@ -23,8 +23,14 @@ code{font-family:var(--f-mono);font-size:.9em;background:var(--ink-3);padding:1p
 /* NAVIGATION */
 nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--ink) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;gap:20px;padding-block:12px}
-.brand{font-family:var(--f-display);font-weight:800;font-size:20px;letter-spacing:.04em;color:var(--bone);text-decoration:none;white-space:nowrap}
-.brand b{color:var(--blood)}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--bone);text-decoration:none;white-space:nowrap;flex:none}
+.brand .mark{width:22px;height:22px;filter:drop-shadow(0 0 6px rgba(210,26,43,.55));transition:transform .4s}
+.brand .mark path{fill:var(--blood)}
+.brand .mark .cut{fill:none;stroke:var(--ink);stroke-width:.9;opacity:.55}
+.brand:hover .mark{transform:rotate(60deg)}
+.brand .name{font-family:var(--f-display);font-weight:800;font-size:19px;letter-spacing:.22em;margin-right:-.22em;background:linear-gradient(180deg,var(--bone) 55%,#b9aaa4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand .sep{width:1px;height:18px;background:var(--blood);transform:skewX(-18deg)}
+.brand .tag{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;margin-right:-.2em;color:var(--blood);border:1px solid var(--blood-dim);padding:2px 6px 1px;border-radius:2px}
 .links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1}
 .links::-webkit-scrollbar{display:none}
 .links a{color:var(--ash);text-decoration:none;font-size:14px;padding:6px 10px;border-radius:4px;white-space:nowrap;border-bottom:2px solid transparent}
@@ -158,7 +164,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 @media (max-width:520px){
   .kagune,.staff{grid-template-columns:1fr}
   details .body{padding-left:0}
-  .brand{font-size:18px}
+  .brand{gap:7px}
+  .brand .name{font-size:15px;letter-spacing:.14em;margin-right:-.14em}
+  .brand .mark{width:18px;height:18px}
+  .brand .tag{font-size:10px;padding:1px 4px}
 }
 
 /* COMING SOON */
